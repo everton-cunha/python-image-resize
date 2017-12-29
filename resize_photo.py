@@ -9,7 +9,6 @@ class PhotoResize:
         self.photo_list = []
     
     def json_load(self, json_file):
-
         print("Downloads ... \n")
         with open(json_file) as file:
             self.photo_list = json.load(file)
