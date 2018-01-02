@@ -1,8 +1,10 @@
+import os
 import threading
 import json
 import PIL
 from PIL import Image
 import urllib.request
+
 
 class PhotoResize:
     def __init__(self):
@@ -37,7 +39,7 @@ class PhotoResize:
         heights_widths = [ [900, 540], [110, 65], [100, 80], [415, 311], [300, 250], [620, 372],
          [60, 45], [300, 225], [300, 250], [158, 158], [100, 80], [115, 113], [150, 113] ]
 
-        new_photos_path = "/home/everton/python-image-resize/new_photos/"
+        new_photos_path = '{}/new_photos/'.format(os.path.abspath(os.path.dirname(__file__)))
         
         if file_name:
             threads = []
@@ -63,8 +65,4 @@ if __name__ == "__main__":
             error = p.resize_photo_list(j['name'])
             if error:
                 print(error)
-
-
-
-
 
